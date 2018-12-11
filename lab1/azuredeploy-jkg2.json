@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
 
-        "storageNamePrefix": {
+        "storageAccount": {
             "type": "string",
             "metadata": {
               "description": "The prefix string to add to a generated string that is unique to the resourceGroup."
@@ -24,7 +24,7 @@
     },
 
     "variables": {
-        "storageName": "[toLower( concat( parameters('storageNamePrefix'), uniqueString(resourceGroup().id) ) )]",
+        "storageAccount": "[toLower( concat( parameters('storageNamePrefix'), uniqueString(resourceGroup().id) ) )]",
         "location": "[resourceGroup().location]"
       },
     
